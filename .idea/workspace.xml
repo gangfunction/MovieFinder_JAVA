@@ -4,22 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1580b087-3e95-4095-9dbb-cd0981799ee2" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MovidFinder/MovidFinder.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MovidFinder/src/CSVparser/CSVparser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MovidFinder/src/CSVparser/MovieTransaction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MovidFinder/src/dto/Connectionmaker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MovidFinder/src/test/CSVparserTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MovidFinder/train.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MovieFinder_JAVA.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+    <list default="true" id="1580b087-3e95-4095-9dbb-cd0981799ee2" name="변경" comment="replaced">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Spring_5_2_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovidFinder/src/CSVparser/CSVparser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovidFinder/src/CSVparser/MovieTransaction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovidFinder/src/dto/Connectionmaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/MovidFinder/src/dto/Connectionmaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovidFinder/src/test/CSVparserTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieFinder_JAVA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MovieFinder_JAVA.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +31,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2BbMocTTUpiqvIiQP1WNDJ5cd1g" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -60,9 +55,10 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "라이브러리",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.last.edited": "모듈",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -98,8 +94,16 @@
       <workItem from="1657333154217" duration="798000" />
       <workItem from="1657338643987" duration="1053000" />
       <workItem from="1657469838061" duration="169000" />
-      <workItem from="1657503542213" duration="4545000" />
+      <workItem from="1657503542213" duration="7363000" />
     </task>
+    <task id="LOCAL-00001" summary="replaced">
+      <created>1657510297734</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1657510297734</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,5 +119,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="replaced" />
+    <option name="LAST_COMMIT_MESSAGE" value="replaced" />
   </component>
 </project>
