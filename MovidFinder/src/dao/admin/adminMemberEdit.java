@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Objects;
 import java.util.Scanner;
-
+//안녕하세욤
 public class adminMemberEdit {
     protected adminMemberEdit() {
         try{
