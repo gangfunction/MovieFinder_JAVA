@@ -1,26 +1,25 @@
 package service;
 
-import dto.dto;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Objects;
 
 public class movieDeleteList{
     public movieDeleteList() {
         try {
             PreparedStatement stmt;
-            Connection conn = dto.makeConnection();
+            Connection conn = MysqlDao.getConnection();
             String sql = "truncate movie";
-            stmt = conn.prepareStatement(sql);
-            stmt.execute();
+            stmt = Objects.requireNonNull(conn).prepareStatement(sql);
+            stmt.executeUpdate();
             String sql2 = "select * from movie";
             ResultSet rs = stmt.executeQuery(sql2);
             if (!rs.next()) {
                 System.out.println();
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }

@@ -1,6 +1,6 @@
 package dao.register;
 
-import dto.memberDTO;
+import dto.User;
 
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -12,7 +12,7 @@ public class adminCode {
         int admin_code = sc.nextInt();
         if(admin_code == 1234){
             System.out.println("관리자 코드 일치합니다.");
-            memberDTO.setAdmin(true);
+            User.setAdmin(true);
         }
         else{
             System.out.println("관리자 코드가 일치하지 않습니다.");
@@ -20,7 +20,7 @@ public class adminCode {
             int select = sc.nextInt();
             if(select == 0){
                 System.out.println("일반회원으로 가입을 진행하겠습니다.");
-                memberDTO.setAdmin(false);
+                User.setAdmin(false);
             }
             else if(select == 1){
                 System.out.println("회원가입을 다시 진행하겠습니다.");

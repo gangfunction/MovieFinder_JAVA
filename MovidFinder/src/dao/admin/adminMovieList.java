@@ -4,14 +4,15 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Objects;
 
 
 public class adminMovieList {
     protected adminMovieList(){
         try{
-            Connection conn= dto.dto.makeConnection();
+            Connection conn= MysqlDao.getConnection();
             String sql = "select * from box_office";
-            PreparedStatement stmt = conn.prepareStatement(sql);
+            PreparedStatement stmt = Objects.requireNonNull(conn).prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
             while(rs.next()){
                 System.out.println("----------------------------------------------------");

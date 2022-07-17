@@ -2,13 +2,13 @@ package service;
 
 import dao.myPage.myPage;
 import dao.register.regProcess;
-import dto.memberDTO;
+import dto.User;
 
 import java.sql.SQLException;
 
 public class PageorRegister {
     public PageorRegister() throws SQLException, ClassNotFoundException {
-        if(memberDTO.getIsin()){
+        if(User.getIsin()){
             new myPage();
         }
         else{

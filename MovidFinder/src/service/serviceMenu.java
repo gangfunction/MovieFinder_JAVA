@@ -5,7 +5,7 @@ import dao.movie.movieSearch;
 import dao.rescan.resCanProcess;
 import dao.reserve.resProcess;
 import dao.reviewPage.reviewMain;
-import dto.memberDTO;
+import dto.User;
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -15,15 +15,15 @@ public class serviceMenu {
 
 
         System.out.println("-------------------------------");
-        if (memberDTO.getIsin()) {
-            System.out.println("아이디 : " + memberDTO.getId());
+        if (User.getIsin()) {
+            System.out.println("아이디 : " + User.getId());
             System.out.println("-------------------------------");
         } else {
             System.out.println("로그인이 필요합니다.");
             System.out.println("-------------------------------");
         }
 
-        if (memberDTO.getIsin()) {
+        if (User.getIsin()) {
             System.out.println("1.로그아웃 2. 마이페이지 3. 영화검색  4. 영화예매  5. 예매취소 6. 리뷰페이지 7.종료");
         } else {
             System.out.println("1. 로그인 2. 회원가입 3. 영화검색 7. 종료");

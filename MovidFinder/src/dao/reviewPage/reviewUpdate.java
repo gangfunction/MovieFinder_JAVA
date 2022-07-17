@@ -1,10 +1,9 @@
 package dao.reviewPage;
 
-import dto.dto;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class reviewUpdate{
@@ -17,11 +16,11 @@ public class reviewUpdate{
         String title = sc.next();
         System.out.println("수정하실 리뷰의 내용을 입력하세요");
         String content = sc.next();
-        Connection conn = dto.makeConnection();
+        Connection conn = MysqlDao.getConnection();
         String sql = "update review set title = ?, content = ? where num = ?";
         PreparedStatement stmt;
         try {
-            stmt = conn.prepareStatement(sql);
+            stmt = Objects.requireNonNull(conn).prepareStatement(sql);
             stmt.setString(1, title);
             stmt.setString(2, content);
             stmt.setInt(3, num);

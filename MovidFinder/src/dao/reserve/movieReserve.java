@@ -1,18 +1,18 @@
 package dao.reserve;
 
-import dto.dto;
 import dto.movieDTO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Objects;
 
 public class movieReserve {
     public movieReserve() {
         try {
-            Connection conn = dto.makeConnection();
-            PreparedStatement stmt = conn.prepareStatement("insert into reservation(movie_name) select movie_name from movie where num =?");
+            Connection conn = MysqlDao.getConnection();
+            PreparedStatement stmt = Objects.requireNonNull(conn).prepareStatement("insert into reservation(movie_name) select movie_name from movie where num =?");
             stmt.setInt(1, movieDTO.getPointer());
             stmt.executeUpdate();
             stmt = conn.prepareStatement("select movie_name from reservation where num=?");
@@ -42,7 +42,7 @@ public class movieReserve {
                     System.out.println("영화이름: " + movie_name + "\n" + "년도: " + year + "\n" + "순위: " + ranks + "\n" + "장르: " + genre + "\n" + "감독: " + director + "\n");
                     System.out.println("----------------------------------------------------");
                 }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 

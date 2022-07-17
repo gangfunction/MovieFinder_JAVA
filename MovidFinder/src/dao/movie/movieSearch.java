@@ -1,12 +1,12 @@
 package dao.movie;
 
-import dto.dto;
 import service.serviceMenu;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class movieSearch {
@@ -17,9 +17,9 @@ public class movieSearch {
         Scanner sc = new Scanner(System.in);
         String name = sc.nextLine();
         try {
-            Connection conn = dto.makeConnection();
+            Connection conn = MysqlDao.getConnection();
             String sql = "select * from box_office where movie_name "+ "like '%"  + name+ "%'";
-            PreparedStatement stmt = conn.prepareStatement(sql);
+            PreparedStatement stmt = Objects.requireNonNull(conn).prepareStatement(sql);
             ResultSet rs;
             rs = stmt.executeQuery(sql);
             if (rs.next()) {

@@ -1,6 +1,6 @@
 package dto;
 
-public class memberDTO {
+public class User {
     public static String id;
     public static String pwd;
     private static boolean isin;
@@ -12,7 +12,7 @@ public class memberDTO {
     }
 
     public static void setId(String id) {
-        memberDTO.id = id;
+        User.id = id;
     }
 
     public static String getPwd() {
@@ -20,21 +20,21 @@ public class memberDTO {
     }
 
     public static void setPwd(String pwd) {
-        memberDTO.pwd = pwd;
+        User.pwd = pwd;
     }
 
     public static boolean getIsin() {
         return isin;
     }
     public static void setIsin(boolean isin) {
-        memberDTO.isin = isin;
+        User.isin = isin;
     }
 
     public static boolean getAdmin() {
         return admin;
     }
     public static void setAdmin(boolean b) {
-        memberDTO.admin=b;
+        User.admin=b;
     }
 
 }

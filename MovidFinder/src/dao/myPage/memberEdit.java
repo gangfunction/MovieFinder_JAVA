@@ -1,11 +1,11 @@
 package dao.myPage;
 
-import dto.dto;
-import dto.memberDTO;
+import dto.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.Scanner;
 
 
@@ -17,12 +17,12 @@ public class memberEdit  {
         String pwd = sc.nextLine();
         String sql = "update member set pwd = ?  where id = ?";
         try{
-            Connection conn = dto.makeConnection();
-            PreparedStatement stmt = conn.prepareStatement(sql);
+            Connection conn = MysqlDao.getConnection();
+            PreparedStatement stmt = Objects.requireNonNull(conn).prepareStatement(sql);
             stmt.setString(1, pwd);
-            stmt.setString(2, memberDTO.getId());
+            stmt.setString(2, User.getId());
             stmt.executeUpdate();}
-        catch(SQLException | ClassNotFoundException e){
+        catch(SQLException e){
                 throw new RuntimeException(e);
             }
         System.out.println("비밀번호 변경이 완료되었습니다.");

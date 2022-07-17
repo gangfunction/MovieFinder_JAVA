@@ -39,7 +39,6 @@ public class Chair implements Seats {
     public void setErr(int j,String i){
         this.err[j] = i;
     }
-    @Override
     public void showing(){
         for (int i = 0; i < arr.length; i++) {
             System.out.println(arr[i]+" "+brr[i]+" "+crr[i]+" "+drr[i]+" "+err[i]);

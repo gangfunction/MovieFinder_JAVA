@@ -1,6 +1,5 @@
 package dao.reserve;
 
-import dto.dto;
 import dto.movieDTO;
 import dto.seatDto;
 import service.serviceMenu;
@@ -9,14 +8,15 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Objects;
 
 public class seatExist {
     protected seatExist() {
         System.out.println("이미 예약이 되었는지 확인합니다.");
         String sql = "select * from reservation where seatnumber=? and pointer=?";
         try{
-            Connection conn = dto.makeConnection();
-            PreparedStatement stmt = conn.prepareStatement(sql);
+            Connection conn = MysqlDao.getConnection();
+            PreparedStatement stmt = Objects.requireNonNull(conn).prepareStatement(sql);
             stmt.setString(1, seatDto.getResult());
             stmt.setInt(2, movieDTO.getPointer());
             ResultSet rs = stmt.executeQuery();

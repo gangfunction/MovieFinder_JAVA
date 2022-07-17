@@ -1,28 +1,28 @@
 package dao.login;
 
-import dto.dto;
-import dto.memberDTO;
+import dto.User;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Objects;
 
 public class adCheck {
     adCheck(){
         try{
             String sql= "select admin from member where id = ? and pwd=?";
-            PreparedStatement stmt = dto.makeConnection().prepareStatement(sql);
-            stmt.setString(1, memberDTO.getId() );
-            stmt.setString(2, memberDTO.getPwd() );
+            PreparedStatement stmt = Objects.requireNonNull(MysqlDao.getConnection()).prepareStatement(sql);
+            stmt.setString(1, User.getId() );
+            stmt.setString(2, User.getPwd() );
             ResultSet rs = stmt.executeQuery();
             if(rs.next() && rs.getInt("admin") == 1){
                 System.out.println("관리자입니다.");
-                memberDTO.setAdmin(true);
+                User.setAdmin(true);
             }else{
-                memberDTO.setAdmin(false);
+                User.setAdmin(false);
             }
 
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }

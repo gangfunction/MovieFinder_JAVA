@@ -1,12 +1,12 @@
 package dao.member;
 
-import dto.dto;
 import dto.movieDTO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class memberWatchedSelect {
@@ -16,8 +16,8 @@ public class memberWatchedSelect {
         movieDTO.setPointer(sc.nextInt());
         String sql = "select * from reservation where num = ?";
         try {
-            Connection conn = dto.makeConnection();
-            PreparedStatement stmt = conn.prepareStatement(sql);
+            Connection conn = MysqlDao.getConnection();
+            PreparedStatement stmt = Objects.requireNonNull(conn).prepareStatement(sql);
             stmt.setInt(1, movieDTO.getPointer());
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
@@ -26,8 +26,6 @@ public class memberWatchedSelect {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
         }
     }
 }

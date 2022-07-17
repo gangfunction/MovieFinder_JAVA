@@ -1,7 +1,7 @@
 package dao.login;
 
-import dao.admin.adminMain;
-import dto.memberDTO;
+import dao.admin.adminMenu;
+import dto.User;
 import service.serviceMenu;
 
 import java.sql.SQLException;
@@ -13,12 +13,12 @@ public class loginProcess {
         new loginInput();
         new adCheck();
         new loginCheck();
-        memberDTO.setIsin(true);
-        if (memberDTO.getAdmin()) {
+        User.setIsin(true);
+        if (User.getAdmin()) {
             System.out.println("관리자 로그인 성공");
             new loginUpdate();
             new loginSave();
-            adminMain.main();
+            new adminMenu();
         }
         else
         {
